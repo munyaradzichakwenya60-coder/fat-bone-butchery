@@ -1,0 +1,190 @@
+[
+  {
+    "slug": "super-t-bone",
+    "title": "Super T-bone",
+    "price": "&#36;13.00 Original price was: &#036;13.00.&#36;12.50Current price is: &#036;12.50.",
+    "images": ["https://headsandhooves.co.zw/wp-content/uploads/2026/06/t-bone_600x.jpg"]
+  },
+  {
+    "slug": "choice-t-bone",
+    "title": "Choice T Bone",
+    "price": "&#36;8.80",
+    "images": ["https://headsandhooves.co.zw/wp-content/uploads/2026/06/t-bone_600x.jpg"]
+  },
+  {
+    "slug": "fillet",
+    "title": "Fillet",
+    "price": "&#36;14.00",
+    "images": [
+      "https://headsandhooves.co.zw/wp-content/uploads/2026/06/Tenderloin-vs_-Filet-Mignon-Tastylicious.jpg"
+    ]
+  },
+  {
+    "slug": "sirloin",
+    "title": "Sup Mixed Cuts",
+    "price": "&#36;6.30 Original price was: &#036;6.30.&#36;6.20Current price is: &#036;6.20.",
+    "images": [
+      "https://headsandhooves.co.zw/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-11-at-09.25.13.jpeg"
+    ]
+  },
+  {
+    "slug": "rump",
+    "title": "Rump",
+    "price": "&#36;14.00 Original price was: &#036;14.00.&#36;13.50Current price is: &#036;13.50.",
+    "images": [
+      "https://headsandhooves.co.zw/wp-content/uploads/2026/06/USDA-Organic-Beef-Picanha-_-Wild-Fork-Foods-_-Wild-Fork-Foods.jpg"
+    ]
+  },
+  {
+    "slug": "short-ribs",
+    "title": "Short Ribs",
+    "price": "&#36;8.80",
+    "images": [
+      "https://headsandhooves.co.zw/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-11-at-10.08.21.jpeg"
+    ]
+  },
+  {
+    "slug": "chuck",
+    "title": "Chuck",
+    "price": "&#36;5.25",
+    "images": ["https://headsandhooves.co.zw/wp-content/uploads/2026/06/Chuck-Roast-Boneless.jpg"]
+  },
+  {
+    "slug": "standard-mince",
+    "title": "Standard Mince",
+    "price": "&#36;4.60",
+    "images": [
+      "https://headsandhooves.co.zw/wp-content/uploads/2026/06/Tajine-de-keftas-aux-courgettes-et-poivrons.jpg"
+    ]
+  },
+  {
+    "slug": "boerewors",
+    "title": "Boerewors",
+    "price": "&#36;10.50 Original price was: &#036;10.50.&#36;10.00Current price is: &#036;10.00.",
+    "images": [
+      "https://headsandhooves.co.zw/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-11-at-09.07.37.jpeg"
+    ]
+  },
+  {
+    "slug": "oxtail",
+    "title": "Oxtail",
+    "price": "&#36;11.90",
+    "images": [
+      "https://headsandhooves.co.zw/wp-content/uploads/2026/06/Charolais-Ochsenschwanz-in-Scheiben.jpg"
+    ]
+  },
+  {
+    "slug": "braai-steaks",
+    "title": "Braai Steaks",
+    "price": "&#36;7.85",
+    "images": ["https://headsandhooves.co.zw/wp-content/uploads/2026/06/raw-steak.jpg"]
+  },
+  {
+    "slug": "beef-chops",
+    "title": "Beef Chops",
+    "price": "&#36;6.40",
+    "images": ["https://headsandhooves.co.zw/wp-content/uploads/2026/06/images-5.jpg"]
+  },
+  {
+    "slug": "whole-chicken",
+    "title": "Whole Chicken",
+    "price": "&#36;3.80&#36;3.80&nbsp;/kg",
+    "images": [
+      "https://headsandhooves.co.zw/wp-content/uploads/2026/06/Juicy-Spatchcock-Chicken-Recipe-1-1.jpg"
+    ]
+  },
+  {
+    "slug": "breast",
+    "title": "Breast",
+    "price": "&#36;7.20",
+    "images": ["https://headsandhooves.co.zw/wp-content/uploads/2026/06/Chicken-Breast-1kg.jpg"]
+  },
+  {
+    "slug": "chicken-thigh",
+    "title": "Chicken Thigh",
+    "price": "&#36;5.60 Original price was: &#036;5.60.&#36;4.90Current price is: &#036;4.90.",
+    "images": [
+      "https://headsandhooves.co.zw/wp-content/uploads/2026/06/Teriyaki-Chicken-Thighs-1.jpg"
+    ]
+  },
+  {
+    "slug": "chicken-wings",
+    "title": "Chicken Wings",
+    "price": "&#36;6.40 Original price was: &#036;6.40.&#36;5.80Current price is: &#036;5.80.",
+    "images": [
+      "https://headsandhooves.co.zw/wp-content/uploads/2026/06/Pileca-krilca-Pakovanje_-1-kg-Zemlja-porekla_-Srbija.jpg"
+    ]
+  },
+  {
+    "slug": "kariba-bream",
+    "title": "Kariba Bream",
+    "price": "&#36;6.30",
+    "images": [
+      "https://headsandhooves.co.zw/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-11-at-09.26.46.jpeg"
+    ]
+  },
+  {
+    "slug": "bream",
+    "title": "Bream",
+    "price": "&#36;5.82 Original price was: &#036;5.82.&#36;5.50Current price is: &#036;5.50.",
+    "images": [
+      "https://headsandhooves.co.zw/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-11-at-09.26.46.jpeg"
+    ]
+  },
+  {
+    "slug": "hake-fillet",
+    "title": "Hake Fillet",
+    "price": "&#36;14.20",
+    "images": [
+      "https://headsandhooves.co.zw/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-11-at-10.56.33.jpeg"
+    ]
+  },
+  {
+    "slug": "baby-hake",
+    "title": "Baby Hake",
+    "price": "&#36;9.50 Original price was: &#036;9.50.&#36;8.50Current price is: &#036;8.50.",
+    "images": [
+      "https://headsandhooves.co.zw/wp-content/uploads/2026/06/HAKE-FILLET-e1673680024471.png"
+    ]
+  },
+  {
+    "slug": "mackerel",
+    "title": "Mackerel",
+    "price": "&#36;4.00 Original price was: &#036;4.00.&#36;3.30Current price is: &#036;3.30.",
+    "images": ["https://headsandhooves.co.zw/wp-content/uploads/2026/06/download-14.jpg"]
+  },
+  {
+    "slug": "goat-meat",
+    "title": "goat-meat",
+    "price": "",
+    "images": []
+  },
+  {
+    "slug": "lamb-chops",
+    "title": "lamb-chops",
+    "price": "",
+    "images": []
+  },
+  {
+    "slug": "lamb-stew",
+    "title": "lamb-stew",
+    "price": "",
+    "images": []
+  },
+  {
+    "slug": "pork-loin",
+    "title": "Pork Loin",
+    "price": "&#36;8.90",
+    "images": [
+      "https://headsandhooves.co.zw/wp-content/uploads/2026/06/opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2018__05__Sous-Vide-Pork-Chops-2-METHOD-6213631163ae435a81dbae61e65ca12f.jpg"
+    ]
+  },
+  {
+    "slug": "pork-ribs-kg",
+    "title": "Pork Ribs/kg",
+    "price": "&#36;12.80",
+    "images": [
+      "https://headsandhooves.co.zw/wp-content/uploads/2026/06/Rare-Breed-Pork-Belly-Ribs.jpg"
+    ]
+  }
+]
