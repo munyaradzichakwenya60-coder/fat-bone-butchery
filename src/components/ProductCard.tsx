@@ -46,12 +46,12 @@ export function ProductCard({ product, onOpenOptions }: ProductCardProps) {
   };
 
   return (
-    <article className="group flex flex-col justify-between bg-white border border-[#edf0f2] hover:border-slate-300/80 p-3 sm:p-4 rounded-none sm:rounded-xs shadow-[0_1px_4px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_20px_rgba(0,0,0,0.06)] transition-all duration-300">
-      <div>
-        {/* Product Image & Badges */}
+    <article className="group flex flex-col justify-between bg-white border border-[#edf0f2] hover:border-slate-300/80 rounded-none sm:rounded-xs overflow-hidden shadow-[0_1px_4px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_20px_rgba(0,0,0,0.06)] transition-all duration-300">
+      <div className="flex-1 flex flex-col">
+        {/* Product Image & Badges — Fills entire top portion edge-to-edge */}
         <div
           onClick={() => onOpenOptions?.(product)}
-          className="relative aspect-square w-full overflow-hidden bg-[#faf9f6] rounded-none cursor-pointer"
+          className="relative aspect-square w-full overflow-hidden bg-[#faf9f6] cursor-pointer"
         >
           {/* Out of Stock Overlay */}
           {product.outOfStock && (
@@ -97,36 +97,38 @@ export function ProductCard({ product, onOpenOptions }: ProductCardProps) {
           />
         </div>
 
-        {/* Product Info */}
-        <div className="pt-3 sm:pt-3.5">
-          <h3
-            onClick={() => onOpenOptions?.(product)}
-            className="font-display text-[15px] sm:text-[16px] font-bold text-[#14283b] leading-snug tracking-tight hover:text-brand transition-colors cursor-pointer line-clamp-2"
-          >
-            {product.name}
-          </h3>
+        {/* Product Info & Details with padding */}
+        <div className="p-3.5 sm:p-4 pb-0 flex-1 flex flex-col justify-between">
+          <div>
+            <h3
+              onClick={() => onOpenOptions?.(product)}
+              className="font-display text-[15px] sm:text-[16px] font-bold text-[#14283b] leading-snug tracking-tight hover:text-brand transition-colors cursor-pointer line-clamp-2"
+            >
+              {product.name}
+            </h3>
 
-          {/* Weight / Portion Subtitle */}
-          <p className="mt-1 text-[11px] sm:text-xs text-slate-400 font-medium tracking-wide">
-            {product.weight || "1kg (~2.2 lbs)"}
-          </p>
+            {/* Weight / Portion Subtitle */}
+            <p className="mt-1 text-[11px] sm:text-xs text-slate-400 font-medium tracking-wide">
+              {product.weight || "1kg (~2.2 lbs)"}
+            </p>
 
-          {/* Price */}
-          <div className="mt-2 sm:mt-2.5 flex items-baseline gap-2">
-            {product.was && (
-              <span className="text-xs sm:text-sm text-slate-400 line-through font-normal">
-                {product.was}
+            {/* Price */}
+            <div className="mt-2 sm:mt-2.5 flex items-baseline gap-2">
+              {product.was && (
+                <span className="text-xs sm:text-sm text-slate-400 line-through font-normal">
+                  {product.was}
+                </span>
+              )}
+              <span className="text-[15px] sm:text-base font-bold text-[#c24134] tracking-tight">
+                {formatPrice(product.price)}
               </span>
-            )}
-            <span className="text-[15px] sm:text-base font-bold text-[#c24134] tracking-tight">
-              {formatPrice(product.price)}
-            </span>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Action Controls Row */}
-      <div className="mt-3.5 sm:mt-4 pt-1">
+      {/* Action Controls Row with padding */}
+      <div className="px-3.5 sm:px-4 pb-3.5 sm:pb-4 pt-3 sm:pt-3.5">
         <div className="flex items-center gap-2">
           {/* Quantity Selector */}
           <div className="relative shrink-0">
