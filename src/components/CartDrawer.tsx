@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   X,
   Plus,
@@ -11,6 +11,8 @@ import {
   Truck,
   Store,
   Globe,
+  Clock,
+  RotateCcw,
 } from "lucide-react";
 import { useCart, BULAWAYO_AREAS } from "@/lib/cart-context";
 
@@ -39,7 +41,12 @@ export function CartDrawer() {
     setInstructions,
     formatPrice,
     getWhatsAppUrl,
+    orderHistory,
+    reorderPastOrder,
+    clearOrderHistory,
   } = useCart();
+
+  const [showHistory, setShowHistory] = useState(false);
 
   if (!isOpen) return null;
 
@@ -70,28 +77,100 @@ export function CartDrawer() {
                   id="cart-drawer-title"
                   className="font-display text-xl font-bold tracking-tight text-slate-900"
                 >
-                  Your Meat Hamper
+                  {showHistory ? "Past Hampers" : "Your Meat Hamper"}
                 </h3>
                 <p className="text-xs font-bold text-slate-700 uppercase tracking-widest">
-                  {items.length === 0
-                    ? "Empty Cart"
-                    : `${items.length} unique cut${items.length > 1 ? "s" : ""}`}
+                  {showHistory
+                    ? `${orderHistory.length} saved order${orderHistory.length > 1 ? "s" : ""}`
+                    : items.length === 0
+                      ? "Empty Cart"
+                      : `${items.length} unique cut${items.length > 1 ? "s" : ""}`}
                 </p>
               </div>
             </div>
 
-            <button
-              onClick={closeCart}
-              className="p-2 text-slate-700 hover:text-black transition-colors rounded-full hover:bg-slate-200 cursor-pointer"
-              aria-label="Close meat cart"
-            >
-              <X className="h-6 w-6" />
-            </button>
+            <div className="flex items-center gap-1">
+              {orderHistory.length > 0 && (
+                <button
+                  onClick={() => setShowHistory((s) => !s)}
+                  className={`p-2 text-xs font-bold uppercase tracking-wider rounded-md transition-colors cursor-pointer flex items-center gap-1.5 ${
+                    showHistory
+                      ? "bg-brand text-white"
+                      : "text-slate-700 hover:text-black hover:bg-slate-200"
+                  }`}
+                  title="View order history"
+                >
+                  <Clock className="h-4 w-4" />
+                  <span className="hidden sm:inline">{showHistory ? "Cart" : "History"}</span>
+                </button>
+              )}
+
+              <button
+                onClick={closeCart}
+                className="p-2 text-slate-700 hover:text-black transition-colors rounded-full hover:bg-slate-200 cursor-pointer"
+                aria-label="Close meat cart"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
           </div>
 
           {/* Drawer Body */}
           <div className="flex-1 overflow-y-auto p-5 sm:p-6 space-y-6 bg-white">
-            {items.length === 0 ? (
+            {showHistory ? (
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-extrabold uppercase tracking-[0.2em] text-brand">
+                    Recent Orders & Hampers
+                  </span>
+                  <button
+                    onClick={clearOrderHistory}
+                    className="text-xs uppercase tracking-wider font-bold text-slate-500 hover:text-brand transition-colors cursor-pointer"
+                  >
+                    Clear History
+                  </button>
+                </div>
+
+                {orderHistory.map((order) => (
+                  <div
+                    key={order.id}
+                    className="border-2 border-slate-200 rounded-lg p-4 bg-slate-50 space-y-3"
+                  >
+                    <div className="flex items-center justify-between text-xs font-bold text-slate-700">
+                      <span>Order #{order.id}</span>
+                      <span>{order.date}</span>
+                    </div>
+
+                    <div className="space-y-1 text-xs text-slate-800">
+                      {order.items.map((item, idx) => (
+                        <div key={idx} className="flex justify-between">
+                          <span>
+                            {item.quantity}x {item.name}
+                          </span>
+                          <span className="font-semibold">{formatPrice(item.price * item.quantity)}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="pt-2 border-t border-slate-200 flex items-center justify-between">
+                      <div className="text-xs font-extrabold text-slate-900">
+                        Total: <span className="text-brand">{formatPrice(order.total)}</span>
+                      </div>
+                      <button
+                        onClick={() => {
+                          reorderPastOrder(order);
+                          setShowHistory(false);
+                        }}
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-brand text-white text-xs font-bold uppercase tracking-wider hover:bg-ink transition-colors cursor-pointer"
+                      >
+                        <RotateCcw className="h-3.5 w-3.5" />
+                        Reorder
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : items.length === 0 ? (
               <div className="py-16 text-center space-y-4">
                 <div className="mx-auto w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 border border-slate-200">
                   <ShoppingBag className="h-8 w-8" />
@@ -100,12 +179,23 @@ export function CartDrawer() {
                 <p className="text-xs sm:text-sm text-slate-600 max-w-xs mx-auto font-medium">
                   Browse our grass-fed cuts, boerewors, or butcher boxes to start your order.
                 </p>
-                <button
-                  onClick={closeCart}
-                  className="mt-4 inline-flex items-center justify-center px-7 py-3 text-xs font-bold uppercase tracking-[0.18em] bg-brand text-white hover:bg-ink transition-colors rounded-sm cursor-pointer shadow-sm"
-                >
-                  Explore Cuts
-                </button>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-2 pt-2">
+                  <button
+                    onClick={closeCart}
+                    className="inline-flex items-center justify-center px-7 py-3 text-xs font-bold uppercase tracking-[0.18em] bg-brand text-white hover:bg-ink transition-colors rounded-sm cursor-pointer shadow-sm"
+                  >
+                    Explore Cuts
+                  </button>
+                  {orderHistory.length > 0 && (
+                    <button
+                      onClick={() => setShowHistory(true)}
+                      className="inline-flex items-center justify-center gap-1.5 px-5 py-3 text-xs font-bold uppercase tracking-[0.18em] border-2 border-slate-300 text-slate-800 hover:border-brand hover:text-brand transition-colors rounded-sm cursor-pointer"
+                    >
+                      <Clock className="h-3.5 w-3.5" />
+                      View Past Hampers
+                    </button>
+                  )}
+                </div>
               </div>
             ) : (
               <>
@@ -297,7 +387,7 @@ export function CartDrawer() {
           </div>
 
           {/* Drawer Footer */}
-          {items.length > 0 && (
+          {!showHistory && items.length > 0 && (
             <div className="p-5 sm:p-6 border-t-2 border-slate-200 bg-[#f7f4ee] space-y-4">
               <div className="space-y-2 text-xs sm:text-sm text-slate-800">
                 <div className="flex justify-between font-semibold">

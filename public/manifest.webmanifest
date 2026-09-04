@@ -1,0 +1,66 @@
+{
+  "name": "The Fat Bone Butcher",
+  "short_name": "Fat Bone",
+  "description": "Bulawayo's Artisanal Whole-Carcass Butchery. Honest Cuts, Deep Flavor, and pasture-raised meats.",
+  "start_url": "/",
+  "id": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0d0908",
+  "theme_color": "#8a1c1c",
+  "categories": ["shopping", "food", "lifestyle"],
+  "icons": [
+    {
+      "src": "/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Meat Cuts & Boxes",
+      "short_name": "Products",
+      "description": "Explore prime beef, lamb, pork, poultry and value hampers",
+      "url": "/products",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Contact & Location",
+      "short_name": "Contact",
+      "description": "Find us at 129 Fort Street, Bulawayo or chat on WhatsApp",
+      "url": "/contact",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Butchery Story",
+      "short_name": "About Us",
+      "description": "Learn about our farm-to-table artisanal heritage",
+      "url": "/about",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

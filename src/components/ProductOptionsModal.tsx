@@ -6,10 +6,11 @@ export interface SelectedProduct {
   id: string;
   name: string;
   price: number;
-  image: string;
-  tag?: string | null;
-  description?: string;
-  options?: string[];
+  image?: string | undefined;
+  img?: string | undefined;
+  tag?: string | null | undefined;
+  description?: string | undefined;
+  options?: string[] | undefined;
 }
 
 interface ProductOptionsModalProps {
@@ -21,7 +22,7 @@ export function ProductOptionsModal({ product, onClose }: ProductOptionsModalPro
   const { addItem, formatPrice } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [selectedOption, setSelectedOption] = useState<string>(
-    product?.options ? product.options[0] : "Standard Cut",
+    product?.options?.[0] || "Standard Cut",
   );
   const [specialNote, setSpecialNote] = useState("");
   const [added, setAdded] = useState(false);
@@ -42,7 +43,7 @@ export function ProductOptionsModal({ product, onClose }: ProductOptionsModalPro
       price: product.price,
       priceFormatted: `$${product.price.toFixed(2)}`,
       quantity: quantity,
-      image: product.image,
+      image: product.image || product.img || "",
       cutOption: `${selectedOption}${specialNote ? ` (${specialNote})` : ""}`,
     });
     setAdded(true);

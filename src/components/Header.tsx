@@ -4,7 +4,7 @@ import { Search, ShoppingBag, Menu, X, ArrowRight } from "lucide-react";
 import { useCart } from "@/lib/cart-context";
 import { SearchModal } from "@/components/SearchModal";
 import { ProductOptionsModal, SelectedProduct } from "@/components/ProductOptionsModal";
-import logoImg from "@/assets/logo.webp";
+import logoImg from "@/assets/logo.svg";
 
 export function Logo({
   tone = "dark",
@@ -48,6 +48,7 @@ export const NAV_LINKS = [
   { name: "About Us", to: "/about" },
   { name: "Products", to: "/products" },
   { name: "Blog", to: "/blog" },
+  { name: "Socials", to: "/socials" },
   { name: "Contact", to: "/contact" },
 ];
 
@@ -78,12 +79,12 @@ export function Header() {
   return (
     <>
       <header className="sticky top-0 z-40 bg-background/95 backdrop-blur-md border-b border-border/40 transition-all">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-8 py-3.5 sm:py-4">
+        <div className="w-full flex items-center justify-between px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3">
           {/* Logo */}
           <Logo />
 
           {/* Desktop Nav */}
-          <nav className="hidden items-center gap-8 rounded-full bg-cream/80 px-8 py-2.5 backdrop-blur border border-ink/10 lg:flex shadow-xs">
+          <nav className="hidden items-center gap-6 xl:gap-8 rounded-full bg-cream/80 px-6 xl:px-7 py-2 backdrop-blur border border-ink/10 lg:flex shadow-xs">
             {NAV_LINKS.map((item) => {
               const isActive = location.pathname === item.to;
               return (

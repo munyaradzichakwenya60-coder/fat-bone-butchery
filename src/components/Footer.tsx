@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "@tanstack/react-router";
-import { Instagram, Facebook, Twitter } from "lucide-react";
+import { Instagram, Facebook, Twitter, Lock } from "lucide-react";
 import { Logo } from "./Header";
 
 export function Footer() {
@@ -24,6 +24,7 @@ export function Footer() {
               { label: "About Us", to: "/about" },
               { label: "Our Farmers", to: "/about" },
               { label: "Our Butchers", to: "/about" },
+              { label: "Socials & Community", to: "/socials" },
               { label: "The Fat Bone Butcher", to: "/" },
             ],
           },
@@ -63,9 +64,18 @@ export function Footer() {
         ))}
       </div>
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 border-t border-border px-6 py-6">
-        <p className="text-xs text-muted-foreground">
-          © 2026 The Fat Bone Butcher. All rights reserved.
-        </p>
+        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+          <span>© 2026 The Fat Bone Butcher. All rights reserved.</span>
+          {/* Subtle manager access portal */}
+          <Link
+            to="/admin"
+            className="text-muted-foreground/30 hover:text-brand transition-colors p-1"
+            title="Butcher Management Portal"
+            aria-label="Manager Portal"
+          >
+            <Lock className="h-3 w-3" />
+          </Link>
+        </div>
         <div className="flex items-center gap-4 text-muted-foreground">
           <Instagram className="h-4 w-4 hover:text-brand cursor-pointer transition-colors" />
           <Facebook className="h-4 w-4 hover:text-brand cursor-pointer transition-colors" />

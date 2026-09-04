@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { BrushImage } from "@/components/BrushImage";
+
 import { useCart } from "@/lib/cart-context";
 import { ProductOptionsModal, SelectedProduct } from "@/components/ProductOptionsModal";
 import { ReferralModal } from "@/components/ReferralModal";
@@ -26,17 +26,16 @@ import tBoneImg from "@/assets/products/t-bone.webp";
 import filletImg from "@/assets/products/fillet.webp";
 import breamImg from "@/assets/products/kariba-bream.webp";
 import boereworsImg from "@/assets/products/boerewors.webp";
-import pMince from "@/assets/p-mince.jpg";
-import butcherShop from "@/assets/butcher-shop.webp";
-import recipes from "@/assets/recipes.webp";
+import pMince from "@/assets/p-mince.webp";
 import boxRegular from "@/assets/box-regular.webp";
 import boxLarge from "@/assets/box-large.webp";
 import boxPremium from "@/assets/box-premium.webp";
+import butcherShop from "@/assets/butcher-shop.webp";
 import g1 from "@/assets/g1.webp";
 import g2 from "@/assets/g2.webp";
 import g3 from "@/assets/g3.webp";
-import methodCowRear from "@/assets/method-cow-rear.webp";
-import methodCowsBanner from "@/assets/method-cows-banner.webp";
+
+
 import stepCut from "@/assets/step-cut.webp";
 import stepPack from "@/assets/step-pack.webp";
 import stepFresh from "@/assets/step-fresh.webp";
@@ -278,28 +277,7 @@ function Btn({
   );
 }
 
-function BotanicalSprig({ className = "h-4 w-9 text-[#122b3e]" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 52 20" fill="none" className={className}>
-      <path
-        d="M2 14.5 C16 13.5 32 9 49 5.5"
-        stroke="currentColor"
-        strokeWidth="1.3"
-        strokeLinecap="round"
-      />
-      <path d="M10 13.8 C9 9 14 7 17.5 10.5 C15.5 12.8 12.5 13.8 10 13.8 Z" fill="currentColor" />
-      <path
-        d="M12 14.2 C13 18.5 18 18.5 18.5 15 C16.5 13.8 14 13.8 12 14.2 Z"
-        fill="currentColor"
-      />
-      <path d="M21 11.5 C20 6.5 25 4.5 28.5 8 C26.5 10.3 23.5 11.5 21 11.5 Z" fill="currentColor" />
-      <path d="M23 12 C24 16.2 29 16 29.5 12.5 C27.5 11.5 25 11.5 23 12 Z" fill="currentColor" />
-      <path d="M32 9 C31 4 36 2 39.5 5.5 C37.5 7.8 34.5 9 32 9 Z" fill="currentColor" />
-      <path d="M35 9.5 C36 13.5 40 13 41 10 C39 9 37 9 35 9.5 Z" fill="currentColor" />
-      <path d="M43 6.8 C44 3.5 48 3.5 49.5 5 C47.5 6.5 45.5 6.8 43 6.8 Z" fill="currentColor" />
-    </svg>
-  );
-}
+
 
 function Index() {
   const navigate = useNavigate();
@@ -423,61 +401,7 @@ function Index() {
         </div>
       </section>
 
-      {/* Our Methods - Pasture-Raised Promise */}
-      <section className="relative overflow-hidden bg-white py-12 sm:py-16 lg:py-24 border-t border-ink/5">
-        <div className="mx-auto flex max-w-[1560px] flex-col items-center justify-between gap-8 sm:gap-10 px-4 sm:px-6 lg:flex-row lg:items-center lg:gap-8 lg:px-8 xl:gap-12">
-          {/* Left Flank Image with Distressed Torn/Brush Borders */}
-          <div className="w-full sm:w-[260px] lg:w-[240px] xl:w-[270px] shrink-0 h-[260px] sm:h-[340px] lg:h-[400px]">
-            <BrushImage
-              src={methodCowRear}
-              alt="Pasture-raised cattle hindquarters and natural coat"
-              className="h-full w-full"
-              imgClassName="object-cover object-center"
-            />
-          </div>
 
-          {/* Center Text Column */}
-          <div className="flex max-w-[420px] shrink-0 flex-col items-start px-2 sm:px-4 lg:px-2">
-            <BotanicalSprig className="h-4 w-9 text-[#122b3e] mb-1.5" />
-            <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#c67c52]">
-              OUR METHODS
-            </span>
-            <h2 className="mt-2.5 font-display text-2xl sm:text-[36px] lg:text-[40px] font-bold leading-[1.08] tracking-tight text-[#0e2638]">
-              Pasture-Raised
-              <br />
-              Promise
-            </h2>
-            <p className="mt-3 font-display italic text-xs sm:text-[14px] text-[#1c364c] tracking-wide">
-              Animal welfare is of the utmost importance to us.
-            </p>
-            <p className="mt-4 text-[11.5px] sm:text-[12px] leading-[1.75] text-[#555e6d]">
-              That's why we only work with farms and processors that share in our passion for good
-              animal husbandry. We promise every animal that comes in our shop has been raised on
-              lush pastures, given a diverse natural diet, and raised without the use of hormones or
-              antibiotics.
-            </p>
-            <div className="mt-6 sm:mt-7">
-              <Link
-                to="/about"
-                className="group relative inline-flex items-center justify-center border border-[#0e2638] bg-transparent px-6 sm:px-7 py-2.5 text-[10px] sm:text-[10.5px] font-bold uppercase tracking-[0.22em] text-[#0e2638] transition-all duration-200 hover:bg-[#0e2638] hover:text-white cursor-pointer"
-              >
-                <span className="absolute bottom-0 left-0 h-0 w-0 border-b-[8px] border-l-[8px] border-b-[#0e2638] border-l-transparent transition-colors group-hover:border-b-white" />
-                MEET OUR FARMERS
-              </Link>
-            </div>
-          </div>
-
-          {/* Right Wide Banner Image with Distressed Torn/Brush Borders */}
-          <div className="w-full flex-1 min-w-0 h-[240px] sm:h-[320px] lg:h-[400px]">
-            <BrushImage
-              src={methodCowsBanner}
-              alt="Hereford and Black Angus cattle grazing in pasture"
-              className="h-full w-full"
-              imgClassName="object-cover object-[center_35%]"
-            />
-          </div>
-        </div>
-      </section>
 
       {/* Recommended */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-24">
@@ -744,72 +668,9 @@ function Index() {
         </div>
       </section>
 
-      {/* Recipes */}
-      <section className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="flex flex-col justify-center bg-brand px-6 sm:px-10 lg:px-16 py-14 sm:py-20 text-brand-foreground">
-          <h2 className="font-display text-3xl sm:text-4xl font-bold leading-tight">
-            Recipes that'll make
-            <br />
-            your mouth water
-          </h2>
-          <p className="mt-4 sm:mt-5 max-w-md text-xs sm:text-sm leading-relaxed text-brand-foreground/85">
-            Reverse-seared rib of beef, slow-braised shin, Sunday roast — written by our head
-            butcher for real kitchens, with timings that actually work.
-          </p>
-          <div className="mt-6 sm:mt-8 self-start">
-            <Link to="/blog">
-              <Btn variant="light">Read All</Btn>
-            </Link>
-          </div>
-        </div>
-        <img
-          src={recipes}
-          alt="Master butcher slicing fresh beef tenderloin on cutting board"
-          width={1400}
-          height={900}
-          loading="lazy"
-          decoding="async"
-          className="h-64 sm:h-80 w-full object-cover lg:h-full"
-        />
-      </section>
 
-      {/* Social */}
-      <section className="bg-cream py-14 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="flex flex-wrap items-center justify-between gap-4 sm:gap-6">
-            <div>
-              <h2 className="font-display text-xl sm:text-2xl font-bold">
-                Share your #CopperCleaver experience!
-              </h2>
-              <p className="mt-1 sm:mt-2 max-w-xl text-xs sm:text-sm text-muted-foreground">
-                We are all about lifelong tastes, honest cuts, and deep flavor. Tag us and we might
-                just feature your cook.
-              </p>
-            </div>
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 py-2.5 text-[10.5px] font-semibold uppercase tracking-[0.18em] border border-ink/25 text-ink hover:border-brand hover:text-brand transition-colors"
-            >
-              Follow Us
-            </a>
-          </div>
-          <div className="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-            {[g3, g1, recipes, butcherShop].map((img, i) => (
-              <img
-                key={i}
-                src={img}
-                alt="Customer cooking with The Fat Bone Butcher cuts"
-                width={700}
-                height={700}
-                loading="lazy"
-                className="aspect-square w-full object-cover rounded-sm shadow-xs"
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+
+
 
       {/* Newsletter */}
       <section className="bg-sand py-14 sm:py-20">

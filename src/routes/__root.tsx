@@ -7,11 +7,14 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import type { ReactNode } from "react";
+import { type ReactNode, useEffect } from "react";
+import { Toaster } from "sonner";
 
 import appCss from "../styles.css?url";
 import { CartProvider } from "../lib/cart-context";
 import { CartDrawer } from "../components/CartDrawer";
+import { FloatingCartBubble } from "../components/FloatingCartBubble";
+import { PWAInstallBanner } from "../components/PWAInstallBanner";
 
 function NotFoundComponent() {
   return (
@@ -74,7 +77,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
       { title: "The Fat Bone Butcher — Honest Cuts. Deep Flavor." },
       {
         name: "description",
@@ -82,6 +85,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "The Fat Bone Butcher. High-grade meat butchered to order and delivered fresh. 129 Fort Street, Bulawayo.",
       },
       { name: "author", content: "The Fat Bone Butcher" },
+      { name: "theme-color", content: "#8a1c1c" },
+      { name: "mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
+      { name: "apple-mobile-web-app-title", content: "Fat Bone" },
+      { name: "application-name", content: "The Fat Bone Butcher" },
       { property: "og:title", content: "The Fat Bone Butcher — Honest Cuts. Deep Flavor." },
       {
         property: "og:description",
@@ -94,6 +103,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:image", content: "/logo-badge.png" },
     ],
     links: [
+      { rel: "manifest", href: "/manifest.webmanifest" },
+      { rel: "dns-prefetch", href: "https://fonts.googleapis.com" },
+      { rel: "dns-prefetch", href: "https://fonts.gstatic.com" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -132,11 +144,44 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
+  useEffect(() => {
+    // Register Service Worker for PWA / offline support
+    if (typeof window !== "undefined" && "serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("/sw.js")
+          .then((reg) => {
+            console.log("Fat Bone PWA Service Worker active with scope:", reg.scope);
+          })
+          .catch((err) => {
+            console.warn("Service worker registration error:", err);
+          });
+      });
+    }
+
+    // Secret Manager Shortcut (Alt + A) to access butcher dashboard
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (
+        (e.altKey && e.key.toLowerCase() === "a") ||
+        (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "a")
+      ) {
+        e.preventDefault();
+        window.location.href = "/admin";
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <CartProvider>
         <Outlet />
         <CartDrawer />
+        <FloatingCartBubble />
+        <PWAInstallBanner />
+        <Toaster richColors position="top-right" />
       </CartProvider>
     </QueryClientProvider>
   );

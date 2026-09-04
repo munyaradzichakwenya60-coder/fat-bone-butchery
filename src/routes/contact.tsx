@@ -96,39 +96,41 @@ function ContactPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
-        <div className="grid gap-12 lg:grid-cols-2 items-start">
+        <div className="grid gap-12 lg:gap-16 lg:grid-cols-2 items-start">
           {/* Details & Location */}
-          <div className="space-y-8">
-            <div>
+          <div className="space-y-9">
+            <div className="pb-6 border-b border-ink/10">
               <h2 className="font-display text-2xl sm:text-3xl font-bold">The Fat Bone Butcher</h2>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+              <p className="mt-2.5 text-sm text-muted-foreground leading-relaxed">
                 High grade meat with great taste for every meal. Born from the bone, cut with care.
               </p>
             </div>
 
-            <div className="space-y-6 text-sm">
-              <div className="flex items-start gap-4">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand">
+            <div className="space-y-7 text-sm">
+              <div className="flex items-start gap-5">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand mt-0.5">
                   <MapPin className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="font-bold uppercase tracking-wider text-xs">Our Location</h3>
-                  <p className="mt-1 text-ink font-medium">
+                  <h3 className="font-bold uppercase tracking-wider text-xs text-ink/70">
+                    Our Location
+                  </h3>
+                  <p className="mt-1.5 text-ink font-medium">
                     129 Fort Street (between 13th & 14th Avenue)
                   </p>
-                  <p className="text-xs text-muted-foreground">Bulawayo, Zimbabwe</p>
+                  <p className="mt-0.5 text-xs text-muted-foreground">Bulawayo, Zimbabwe</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand">
+              <div className="flex items-start gap-5">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand mt-0.5">
                   <Phone className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="font-bold uppercase tracking-wider text-xs">
+                  <h3 className="font-bold uppercase tracking-wider text-xs text-ink/70">
                     Phone & Local Orders
                   </h3>
-                  <p className="mt-1 font-semibold text-brand text-base">
+                  <p className="mt-1.5 font-semibold text-brand text-base">
                     <a href="tel:+263712851525" className="hover:underline">
                       +263 712 851 525
                     </a>
@@ -136,27 +138,29 @@ function ContactPage() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand">
+              <div className="flex items-start gap-5">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand mt-0.5">
                   <MessageCircle className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="font-bold uppercase tracking-wider text-xs">WhatsApp Lines</h3>
-                  <div className="mt-1 flex flex-wrap gap-2">
+                  <h3 className="font-bold uppercase tracking-wider text-xs text-ink/70">
+                    WhatsApp Lines
+                  </h3>
+                  <div className="mt-2.5 flex flex-wrap gap-2.5">
                     <a
-                      href="https://wa.me/263712851525?text=Hello%20The%20Copper%20Cleaver%20Butchery,%20I%20would%20like%20to%20order"
+                      href="https://wa.me/263712851525?text=Hello%20The%20Fat%20Bone%20Butcher,%20I%20would%20like%20to%20order"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded text-xs font-semibold transition-colors"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded text-xs font-semibold transition-colors shadow-xs"
                     >
                       <MessageCircle className="h-3.5 w-3.5" />
                       <span>Local (+263 712 851 525)</span>
                     </a>
                     <a
-                      href="https://wa.me/447762068799?text=Hello%20The%20Copper%20Cleaver%20Butchery,%20I%20am%20ordering%20from%20Diaspora"
+                      href="https://wa.me/447762068799?text=Hello%20The%20Fat%20Bone%20Butcher,%20I%20am%20ordering%20from%20Diaspora"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-blue-700 hover:bg-blue-800 text-white rounded text-xs font-semibold transition-colors"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-blue-700 hover:bg-blue-800 text-white rounded text-xs font-semibold transition-colors shadow-xs"
                     >
                       <MessageCircle className="h-3.5 w-3.5" />
                       <span>Diaspora UK (+44 7762 068799)</span>
@@ -165,35 +169,38 @@ function ContactPage() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand">
+              <div className="flex items-start gap-5">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand mt-0.5">
                   <Clock className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="font-bold uppercase tracking-wider text-xs">
+                  <h3 className="font-bold uppercase tracking-wider text-xs text-ink/70">
                     Counter Operating Hours
                   </h3>
-                  <div className="mt-1 text-xs sm:text-sm text-muted-foreground space-y-1">
-                    <p>
-                      <strong className="text-ink">Mon – Fri:</strong> 7:30 AM – 6:00 PM
-                    </p>
-                    <p>
-                      <strong className="text-ink">Saturday:</strong> 7:30 AM – 6:30 PM
-                    </p>
-                    <p>
-                      <strong className="text-ink">Sunday & Holidays:</strong> 8:00 AM – 1:00 PM
-                    </p>
+                  <div className="mt-2 text-xs sm:text-sm text-muted-foreground space-y-1.5">
+                    <div className="flex items-baseline gap-4 sm:gap-6">
+                      <span className="text-ink font-semibold min-w-[125px]">Mon – Fri:</span>
+                      <span>7:30 AM – 6:00 PM</span>
+                    </div>
+                    <div className="flex items-baseline gap-4 sm:gap-6">
+                      <span className="text-ink font-semibold min-w-[125px]">Saturday:</span>
+                      <span>7:30 AM – 6:30 PM</span>
+                    </div>
+                    <div className="flex items-baseline gap-4 sm:gap-6">
+                      <span className="text-ink font-semibold min-w-[125px]">Sunday & Holidays:</span>
+                      <span>8:00 AM – 1:00 PM</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Bulawayo Map Visual */}
-            <div className="p-5 bg-sand/70 border border-ink/15 rounded text-xs text-ink/80 space-y-2">
+            <div className="mt-8 p-5 sm:p-6 bg-sand/60 border border-ink/15 rounded-sm text-xs text-ink/80 space-y-2 leading-relaxed">
               <span className="font-bold uppercase tracking-wider text-[10px] text-brand block">
                 🗺️ Fort Street Location Directions
               </span>
-              <p className="leading-relaxed">
+              <p>
                 Located centrally on <strong>Fort Street</strong> between{" "}
                 <strong>13th Avenue and 14th Avenue</strong>. Look for our signage and signature
                 deep burgundy entrance. Ample curbside parking for quick order pick-ups.

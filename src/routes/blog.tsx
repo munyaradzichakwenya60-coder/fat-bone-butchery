@@ -147,17 +147,36 @@ function BlogPage() {
     <div className="min-h-screen bg-background text-foreground">
       <Header />
 
-      <section className="bg-cream py-16 sm:py-20 border-b border-border text-center">
-        <div className="mx-auto max-w-4xl px-6">
-          <Eyebrow>BUTCHER'S KITCHEN & JOURNAL</Eyebrow>
-          <h1 className="mt-4 font-display text-4xl sm:text-5xl font-bold">
-            Recipes & Cooking Tips
+      {/* Featured Header Banner: Recipes that'll make your mouth water */}
+      <section className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] border-b border-border">
+        <div className="flex flex-col justify-center bg-brand px-6 sm:px-10 lg:px-16 py-14 sm:py-20 text-brand-foreground">
+          <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-cream/70 mb-2">
+            BUTCHER'S KITCHEN & JOURNAL
+          </span>
+          <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+            Recipes that'll make
+            <br />
+            your mouth water
           </h1>
-          <p className="mt-3 text-sm text-muted-foreground max-w-xl mx-auto leading-relaxed">
-            Practical advice and secret techniques from our blockmen to get the deepest flavor out
-            of every cut.
+          <p className="mt-4 sm:mt-5 max-w-md text-xs sm:text-sm leading-relaxed text-brand-foreground/85">
+            Reverse-seared rib of beef, slow-braised shin, Sunday roast — written by our head
+            butcher for real kitchens, with timings that actually work.
           </p>
+          <div className="mt-6 sm:mt-8 flex items-center gap-3">
+            <span className="text-xs uppercase tracking-widest text-cream/80 font-bold">
+              Explore Our Tested Guides Below ↓
+            </span>
+          </div>
         </div>
+        <img
+          src={recipes}
+          alt="Master butcher slicing fresh beef tenderloin on cutting board"
+          width={1400}
+          height={900}
+          loading="eager"
+          decoding="async"
+          className="h-64 sm:h-80 w-full object-cover lg:h-full"
+        />
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
