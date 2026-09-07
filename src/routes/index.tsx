@@ -563,20 +563,32 @@ function Index() {
 
       {/* Features - Value Pillars */}
       <section className="border-t border-slate-200/80 bg-white py-14 sm:py-20 lg:py-24">
-        <div className="mx-auto grid max-w-6xl gap-8 sm:gap-12 px-4 sm:px-6 grid-cols-1 sm:grid-cols-3 lg:gap-16">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-10 lg:gap-16 px-4 sm:px-6 sm:grid-rows-[auto_auto_auto]">
           {FEATURES.map((f) => (
-            <div key={f.title} className="flex flex-col items-center text-center">
-              <div className="flex h-16 sm:h-20 w-20 sm:w-24 items-center justify-center">
+            <div
+              key={f.title}
+              className="flex flex-col items-center text-center sm:grid sm:grid-rows-subgrid sm:row-span-3 sm:gap-0"
+            >
+              {/* Row 1: Fixed-dimension optically-balanced icon */}
+              <div className="flex h-16 sm:h-20 w-16 sm:w-20 items-center justify-center mx-auto mb-4 sm:mb-5">
                 <img
                   src={f.img}
                   alt={f.alt}
-                  className="max-h-full max-w-full object-contain transition-transform duration-300 hover:scale-110"
+                  width={80}
+                  height={80}
+                  className="h-16 w-16 sm:h-20 sm:w-20 object-contain transition-transform duration-300 hover:scale-110"
                 />
               </div>
-              <h3 className="mt-4 sm:mt-5 font-display text-lg sm:text-[22px] font-bold text-[#143048] tracking-tight">
-                {f.title}
-              </h3>
-              <p className="mt-2 sm:mt-3 max-w-[300px] text-xs sm:text-[13px] leading-[1.65] text-slate-500 font-normal">
+
+              {/* Row 2: Headline with aligned height across all columns */}
+              <div className="min-h-[3rem] sm:min-h-[3.75rem] flex items-start justify-center px-1">
+                <h3 className="font-display text-lg sm:text-[21px] lg:text-[22px] font-bold text-[#143048] tracking-tight leading-snug">
+                  {f.title}
+                </h3>
+              </div>
+
+              {/* Row 3: Description starting on the exact same horizontal baseline */}
+              <p className="mt-2 sm:mt-3 max-w-[300px] text-xs sm:text-[13px] leading-[1.65] text-slate-500 font-normal mx-auto">
                 {f.copy}
               </p>
             </div>
